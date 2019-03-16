@@ -2,12 +2,12 @@ body {
     background-color: blue;
 }
 
-#input {
+#tempInput {
 width: 400px;
 height: 15px
 }
 
-#answer {
+#tempOutput {
     width: 400px;
     height: 100px
 }
