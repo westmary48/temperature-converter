@@ -21,5 +21,18 @@ const determineConverter = (e) => {
   console.log("event", e);
 }
 
+const buttonClick = () => {
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+}
+
+// const buttonEvents = () => {
+//     document.getElementById('cat').addEventListener('click', buttonClick);
+//     document.getElementById('dog').addEventListener('click', buttonClick);
+//     document.getElementById('dino').addEventListener('click', buttonClick);
+//     document.getElementById('all').addEventListener('click', buttonClick);
+// }
+
+const init = () => {
+
+}
