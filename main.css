@@ -1,3 +1,13 @@
 body {
     background-color: blue;
 }
+
+#tempInput {
+width: 400px;
+height: 15px
+}
+
+#tempOutput {
+    width: 400px;
+    height: 100px
+}
