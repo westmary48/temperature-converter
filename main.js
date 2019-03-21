@@ -1,60 +1,63 @@
+const celsius = document.getElementById('C');
+const fahrenheit = document.getElementById('F');
+const convertBtn = document.getElementById('convertBtn');
+const input = document.getElementById('tempInput');
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint
 }
 
-const toCelsius =  (celsius) => {
-    const fahrenheit = Math.round((celsius * (9/5)) + 32);;
-console.log(fahrenheit);
-}
-
-const toFahrenheit =  (fahrenheit) => {
-    const celsius = Math.round((fahrenheit - 32) * (5/9));
-    console.log(celsius);
-}
-
-const temperatureSelected = () => {
-// Get a reference to the button element in the DOM
-
-document.getElementById("radioBtn");
-   const valueTemp = temperatureSelected.options[temperatureSelected.selectedIndex].value;
-   console.log(valueTemp);
-
-// const button = document.getElementById("converter");
-
-// document.getElementById("temp").value;
-
-//    var result;
-
-//    if (valueTemp == 1) {
-//       result = celToFah(numberTemp);
-//       document.getElementById("resultContainer").innerHTML = "= " + result + "°Fahrenheit";
-//    } else {
-//       result = fahToCel(numberTemp);
-//       document.getElementById("resultContainer").innerHTML = "= " + result + "°Celsius";
-//    }
-
+// const toCelsius =  () => {
+//     const c = document.getElementById('tempInput').value;
+//     return (c * 9 / 5) + 32;
 // }
 
-}
+// const toFahrenheit =  () => {
+//     const f = document.getElementById('tempInput').value;
+//     return (f - 32) * 5 / 9;
+// }
+
+// const temperatureSelected = () => {
+// // Get a reference to the button element in the DOM
+// if (document.getElementById('C').checked === 'true') {
+//     console.log(getElementById('tempInput').value)
+//     console.log('C');
+// } else if (document.getElementById('F' === 'true'))
+// console.log(getElementById('tempInput').value)
+// console.log('F');
+// }
+
 
 // This function should determine which conversion should
 // happen based on which radio button is selected.
-const determineConverter = (e) => {
+const determineConverter = () => {
+    if (celsius.checked === 'true') {
+        console.log(input.value);
+        console.log('C');
+        celsius.value = fahrenheit.value;
+    }
+    if (fahrenheit.checked === 'true') {
+        console.log(input.value);
+        console.log('F');
+        fahrenheit.value = celsius.value;
+    }
 
 }
 
-const buttonClick = () => {
+const buttonClick = (e) => {
 // Assign a function to be executed when the button is clicked
-button.addEventListener("click", determineConverter);
-console.log(document.getElementById('tempInput').value);
+    const buttonId = e.target.id;
+  if (buttonId === 'convertBtn') {
+    determineConverter();
+  }
 }
 
 const buttonEvents = () => {
     document.getElementById('convertBtn').addEventListener('click', buttonClick);
-
 }
 
 const init = () => {
     buttonEvents();
 }
+init();
