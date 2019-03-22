@@ -8,15 +8,15 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint
 }
 
-// const toCelsius =  () => {
-//     const c = document.getElementById('tempInput').value;
-//     return (c * 9 / 5) + 32;
-// }
+const toCelsius =  () => {
+    const c = document.getElementById('tempInput').value;
+    return (c * 9 / 5) + 32;
+}
 
-// const toFahrenheit =  () => {
-//     const f = document.getElementById('tempInput').value;
-//     return (f - 32) * 5 / 9;
-// }
+const toFahrenheit =  () => {
+    const f = document.getElementById('tempInput').value;
+    return (f - 32) * 5 / 9;
+}
 
 // const temperatureSelected = () => {
 // // Get a reference to the button element in the DOM
@@ -32,12 +32,12 @@ const printToDom = (divId, textToPrint) => {
 // This function should determine which conversion should
 // happen based on which radio button is selected.
 const determineConverter = () => {
-    if (celsius.checked === 'true') {
+    if (celsius.checked) {
         console.log(input.value);
         console.log('C');
         celsius.value = fahrenheit.value;
     }
-    if (fahrenheit.checked === 'true') {
+    else if (fahrenheit.checked) {
         console.log(input.value);
         console.log('F');
         fahrenheit.value = celsius.value;
