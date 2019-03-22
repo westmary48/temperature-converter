@@ -18,16 +18,6 @@ const toFahrenheit =  () => {
     return (f - 32) * 5 / 9;
 }
 
-// const temperatureSelected = () => {
-// // Get a reference to the button element in the DOM
-// if (document.getElementById('C').checked === 'true') {
-//     console.log(getElementById('tempInput').value)
-//     console.log('C');
-// } else if (document.getElementById('F' === 'true'))
-// console.log(getElementById('tempInput').value)
-// console.log('F');
-// }
-
 
 // This function should determine which conversion should
 // happen based on which radio button is selected.
