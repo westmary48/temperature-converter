@@ -2,6 +2,7 @@ const celsius = document.getElementById('C');
 const fahrenheit = document.getElementById('F');
 const convertBtn = document.getElementById('convertBtn');
 const input = document.getElementById('tempInput');
+const output = document.getElementById('tempOutput');
 
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
@@ -28,6 +29,12 @@ const toFahrenheit =  () => {
     domStringBuilder(f, 'F');
 }
 
+const clearInput = () => {
+    console.log('button was clicked');
+    input.value = '';
+    output.textContent = '';
+}
+
 
 // This function should determine which conversion should
 // happen based on which radio button is selected.
@@ -49,6 +56,7 @@ const determineConverter = () => {
 
 const buttonEvents = () => {
     document.getElementById('convertBtn').addEventListener('click', determineConverter);
+    document.getElementById('clearBtn').addEventListener('click', clearInput);
 }
 
 const init = () => {
