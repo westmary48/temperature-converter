@@ -1,5 +1,5 @@
 body {
-    background-color: blue;
+    background-color: blanchedalmond;
 }
 
 #tempInput {
@@ -16,12 +16,11 @@ height: 15px
     color: green;
 }
 
-.blue {
-    color: blue;
-}
-
 .red {
     color: red;
 }
 
 
+.blue {
+    color:blue;
+}
