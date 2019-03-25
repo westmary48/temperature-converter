@@ -41,8 +41,17 @@ const clearInput = () => {
     output.textContent = '';
 }
 
+const keyup = () => {
+input.addEventListener("keyup", function(e) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (e.keyCode === 13) {
+        determineConverter();
+      e.preventDefault();
+      document.getElementById('convertBtn').click();
+    }
+  })
 
-
+}
 // This function should determine which conversion should
 // happen based on which radio button is selected.
 const determineConverter = () => {
@@ -63,5 +72,6 @@ const buttonEvents = () => {
 
 const init = () => {
     buttonEvents();
+    keyup();
 }
 init();
