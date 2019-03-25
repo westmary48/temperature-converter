@@ -43,7 +43,6 @@ const clearInput = () => {
 
 const keyup = () => {
 input.addEventListener("keyup", function(e) {
-    // Number 13 is the "Enter" key on the keyboard
     if (e.keyCode === 13) {
         determineConverter();
       e.preventDefault();

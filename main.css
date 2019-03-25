@@ -20,7 +20,16 @@ height: 15px
     color: red;
 }
 
-
 .blue {
     color:blue;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+.title {
+    display: flex;
+    justify-content: center;
+}
+
