@@ -10,7 +10,6 @@ const printToDom = (divId, textToPrint) => {
 }
 
 const domStringBuilder = (finalTemp, unit) => {
-    let domString = '';
 if (finalTemp > 90 && unit == "F" || finalTemp > 32 && unit == "C") {
     let domString = `<h2 class="red">${finalTemp} degrees ${unit}</h2>`
     printToDom("tempOutput", domString);
@@ -21,11 +20,7 @@ if (finalTemp > 90 && unit == "F" || finalTemp > 32 && unit == "C") {
     let domString = `<h2 class="green">${finalTemp} degrees ${unit}</h2>`
     printToDom("tempOutput", domString);
 }
-//         domString = `<h2>${finalTemp}</h2> degrees <h2>${unit}</h2>`;
-//  printToDom('tempOutput',domString );
 }
-
-// }
 
 const toCelsius =  () => {
     let temperatureInput = input.value;
@@ -52,14 +47,9 @@ const clearInput = () => {
 // happen based on which radio button is selected.
 const determineConverter = () => {
     if (celsius.checked) {
-        // console.log(input.value);
-        // console.log('C');
-        // celsius.value = fahrenheit.value;
         toCelsius();
     }
     else if (fahrenheit.checked) {
-        // console.log(input.value);
-        // console.log('F');
         fahrenheit.value = celsius.value;
         toFahrenheit();
     }
