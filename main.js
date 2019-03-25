@@ -10,10 +10,16 @@ const printToDom = (divId, textToPrint) => {
 }
 
 const domStringBuilder = (finalTemp, unit) => {
-    let domString = '';
-        domString = `<h2>${finalTemp}</h2> degrees <h2>${unit}</h2>`;
- printToDom('tempOutput',domString );
-
+if (finalTemp > 90 && unit == "F" || finalTemp > 32 && unit == "C") {
+    let domString = `<h2 class="red">${finalTemp} degrees ${unit}</h2>`
+    printToDom("tempOutput", domString);
+} else if (finalTemp < 32 && unit == "F" || finalTemp < 0 && unit == "C") {
+    let domString = `<h2 class="blue">${finalTemp} degrees ${unit}</h2>`
+    printToDom("tempOutput", domString);
+} else if (32 < finalTemp < 90 && unit == "F" || 0 < finalTemp < 32 && unit == "C") {
+    let domString = `<h2 class="green">${finalTemp} degrees ${unit}</h2>`
+    printToDom("tempOutput", domString);
+}
 }
 
 const toCelsius =  () => {
@@ -35,19 +41,24 @@ const clearInput = () => {
     output.textContent = '';
 }
 
+const keyup = () => {
+input.addEventListener("keyup", function(e) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (e.keyCode === 13) {
+        determineConverter();
+      e.preventDefault();
+      document.getElementById('convertBtn').click();
+    }
+  })
 
+}
 // This function should determine which conversion should
 // happen based on which radio button is selected.
 const determineConverter = () => {
     if (celsius.checked) {
-        // console.log(input.value);
-        // console.log('C');
-        // celsius.value = fahrenheit.value;
         toCelsius();
     }
     else if (fahrenheit.checked) {
-        // console.log(input.value);
-        // console.log('F');
         fahrenheit.value = celsius.value;
         toFahrenheit();
     }
@@ -61,5 +72,6 @@ const buttonEvents = () => {
 
 const init = () => {
     buttonEvents();
+    keyup();
 }
 init();
